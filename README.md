@@ -29,6 +29,8 @@ Nest example with :
 - Add custom exception
 - Add loggers
 - Add swagger
+
+## Author
 <b>by JNAH AHMED : Technical lead developer</b>
 ## Installation
 
