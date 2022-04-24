@@ -29,7 +29,7 @@ Nest example with :
 - Add custom exception
 - Add loggers
 - Add swagger
-JNAH AHMED : Technical lead developer
+<b>by JNAH AHMED : Technical lead developer</b>
 ## Installation
 
 ```bash
