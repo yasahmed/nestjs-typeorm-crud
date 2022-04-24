@@ -24,7 +24,8 @@ import { AllExceptionsFilter } from './exception/handler.exception';
     {
       provide: APP_FILTER,
       useClass: AllExceptionsFilter,
-    },],
+    },
+  ],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {

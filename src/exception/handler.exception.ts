@@ -9,7 +9,8 @@ import {
   import { Response, Request } from 'express';
   
   import * as fs from 'fs';
-import { CustomHttpExceptionResponse } from './model/custom.http.exception.response.model';
+import { BusinessException } from './definition/custom.business.exception';
+import { CustomHttpExceptionResponse } from './definition/custom.http.exception';
 import { HttpExceptionResponse } from './model/http.exception.response.model';
   
   
@@ -22,11 +23,15 @@ import { HttpExceptionResponse } from './model/http.exception.response.model';
   
       let status: HttpStatus;
       let errorMessage: string;
-  if (exception instanceof BadRequestException) {
+
+      if (exception instanceof BadRequestException) {
         status = exception.getStatus();
-        const errorResponse = exception.getResponse();
         errorMessage =errorMessage = exception.getResponse()['message'];
-  }
+      }
+      else if (exception instanceof BusinessException) {
+        status = exception.getStatus();
+        errorMessage = exception.message;
+      }
       else if (exception instanceof HttpException) {
         status = exception.getStatus();
         const errorResponse = exception.getResponse();

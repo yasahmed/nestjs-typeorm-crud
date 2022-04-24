@@ -1,10 +1,9 @@
 import { PhotoDto } from "./photo.dto";
 import { ApiProperty } from '@nestjs/swagger';
-import {  IsNotEmpty,IsNumber,MaxLength,MinLength,Max,Min } from 'class-validator';
+import {  IsNotEmpty,IsNumber,MaxLength,MinLength,Max,Min,IsEmail } from 'class-validator';
 
 export class UserDto {
     @ApiProperty()
-    @IsNumber()
     id: number;
 
     @ApiProperty()
@@ -24,6 +23,9 @@ export class UserDto {
     @Max(120)
     @Min(10)
     age: number;
+
+    @IsEmail()
+    email: string
 
     @ApiProperty()
     photos: PhotoDto[]

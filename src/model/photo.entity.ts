@@ -34,7 +34,7 @@ import { User } from './user.entity';
     @UpdateDateColumn()
     updatedAt: Date;
 
-    @ManyToOne(() => User, user => user.photos)
+    @ManyToOne(() => User, user => user.photos, { onDelete: 'CASCADE' })
     user: User;
   
 

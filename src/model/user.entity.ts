@@ -48,7 +48,7 @@ import { Photo } from './photo.entity';
     @UpdateDateColumn()
     updatedAt: Date;
 
-    @OneToMany(() => Photo, photo => photo.user)
+    @OneToMany(() => Photo, photo => photo.user,{ cascade: ['insert', 'update'] } )
     photos: Photo[];
   
   
